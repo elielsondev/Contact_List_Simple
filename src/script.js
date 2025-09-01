@@ -80,7 +80,7 @@ do {
         case "4":
             // • Atualizar contato existente.
             let updateName = prompt("Digite o nome do contato que deseja atualizar:");
-            
+
             for (let i = 0; i < contacts.length; i += 1) {
                 if (contacts[i][0].toLowerCase() === updateName.toLowerCase()) {
                     let updatePhone = prompt("Digite o novo telefone do contato:");
