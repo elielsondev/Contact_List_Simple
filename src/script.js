@@ -63,7 +63,7 @@ do {
             // • Buscar contatos pelo nome (parcial ou completo).
             let searchName = prompt("Digite o nome do contato que deseja buscar:");
             
-            for (let i = 0; i < contacts.length; i++) {
+            for (let i = 0; i < contacts.length; i += 1) {
                 if (contacts[i][0].toLowerCase().includes(searchName.toLowerCase())) {
                     console.log(`
                     ------------------------
@@ -79,13 +79,26 @@ do {
 
         case "4":
             // • Atualizar contato existente.
+            let updateName = prompt("Digite o nome do contato que deseja atualizar:");
+            
+            for (let i = 0; i < contacts.length; i += 1) {
+                if (contacts[i][0].toLowerCase() === updateName.toLowerCase()) {
+                    let updatePhone = prompt("Digite o novo telefone do contato:");
+                    let updateEmail = prompt("Digite o novo email do contato:");
+
+                    contacts[i][1] = updatePhone;
+                    contacts[i][2] = updateEmail;
+
+                    console.log("Contato atualizado com sucesso!");
+                }
+            }
             break;
         
         case "5":
             // • Remover contato da lista.
             let removeName = prompt("Digite o nome do contato que deseja remover:");
             
-            for (let i = 0; i < contacts.length; i++) {
+            for (let i = 0; i < contacts.length; i+= 1) {
                 if (contacts[i][0].toLowerCase() === removeName.toLowerCase()) {
                     // Remover contato usando splice
                     // fonte: https://cursos.alura.com.br/forum/topico-duvida-remover-uma-posicao-especifica-no-array-260328
