@@ -18,7 +18,6 @@ function addContact(name, phone, email) {
 };
 
 addContact(contactName, contactPhone, contactEmail);
-console.log(contacts[0]);
 
 // • Funcionalidades obrigatórias (menu interativo com prompt):
 menu = "";
@@ -42,6 +41,7 @@ do {
             let contactEmail = prompt("Digite o email do contato:");
 
             addContact(contactName, contactPhone, contactEmail);
+            
             break;
     
         case "2":
