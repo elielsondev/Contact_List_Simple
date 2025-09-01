@@ -83,6 +83,29 @@ do {
         
         case "5":
             // • Remover contato da lista.
+            let removeName = prompt("Digite o nome do contato que deseja remover:");
+            
+            for (let i = 0; i < contacts.length; i++) {
+                if (contacts[i][0].toLowerCase() === removeName.toLowerCase()) {
+                    // Remover contato usando splice
+                    // fonte: https://cursos.alura.com.br/forum/topico-duvida-remover-uma-posicao-especifica-no-array-260328
+                    // splice - remove 1 elemento de índice 2
+                        // arr = [0, 1, 2, 3, 4 ,5];
+                        // arr.splice(2,1); 
+                        // console.log(arr); // [0, 1, 3, 4, 5]
+                    
+                    // splice - remove 3 elementos a partir do índice 1 
+                        // array = [0, 1, 2, 3, 4 ,5];
+                        // array.splice(1,3); 
+                        // console.log( array ); // [0, 4, 5]
+                    
+                    contacts.splice(i, 1);
+                    console.log("Contato removido com sucesso!");
+
+                    // Obs.: Na fonte com o exemplo de remover com splice(), 
+                    // também tem exemplos com o indexOf() e o filter().
+                }
+            };
             break;
 
         case "sair":
